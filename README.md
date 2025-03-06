@@ -1,1 +1,1 @@
-# fullstack
+This is an e-commerce platform for food lovers
