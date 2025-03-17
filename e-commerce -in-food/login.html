@@ -18,7 +18,6 @@
     {
         width: 100%;
         height: 100vh;
-        background-image: linear-gradient(rgba(0, 0, 50, 0.8),rgba(0, 0, 50, 0.8));
         background-position: center;
         background-size: cover;
         position: relative;
@@ -30,17 +29,47 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        height:62%;
         transform: translate(-50%,-50%);
         background: #fff;
         padding: 50px 60px 70px;
         text-align: center;
     }
     .form-box h1{
-        
+        font-size: 30px;
+        margin-bottom: 60px;
+        color:#3c00a0;
+        position: relative;
+    }
+    .form-box h1::after{
+        content: '';
+        width: 30px;
+        height: 4px;
+        border-radius: 3px;
+        background: #3c00a0;
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .input-field{
+        background: #eaeaea;
+        margin: 15px 0;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+    }
+    input{
+        width: 100%;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        padding: 18px 15px;
     }
 </style>
 <body>
     <div class="container">
+        <img src="c:\Users\Admin\OneDrive\Desktop\mernstack\mernstack\.git\wbqwlmk8mlit5kyyjpb0oeujbpxl7cdhdsl5x2gpo2chgdpuw1ulo22kdnnhhl76-o.avif" style="background-attachment: fixed;">
         <div class="form-box">
             <h1>Sign Up</h1>
             <form>
@@ -61,6 +90,7 @@
                         <i class="fa-solid fa-lock"></i>
                         <input type="confirm-password" placeholder="Confirm Password:">
                     </div>
+                    <p>Forget Password?<a href="#">Click Here</a></p>
                 </div>
             </form>
         </div>
