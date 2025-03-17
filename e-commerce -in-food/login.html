@@ -5,95 +5,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 </head>
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
-        font-family:'Poppins',sans-serif;
+        font-family: 'Poppins', sans-serif;
         box-sizing: border-box;
     }
-    .container
-    {
+    .container {
         width: 100%;
         height: 100vh;
-        background-position: center;
-        background-size: cover;
-        position: relative;
+        background: url('background.jpg') no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .form-box
-    {
+    .form-box {
         width: 90%;
         max-width: 450px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        height:62%;
-        transform: translate(-50%,-50%);
         background: #fff;
         padding: 50px 60px 70px;
         text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
-    .form-box h1{
+    /* Underlined Title */
+    .form-box h1 {
         font-size: 30px;
-        margin-bottom: 60px;
-        color:#3c00a0;
+        margin-bottom: 20px;
+        color: #3c00a0;
         position: relative;
+        display: inline-block;
     }
-    .form-box h1::after{
+    .form-box h1::after {
         content: '';
-        width: 30px;
+        width: 50%;
         height: 4px;
-        border-radius: 3px;
         background: #3c00a0;
         position: absolute;
-        bottom: -12px;
+        bottom: -5px;
         left: 50%;
         transform: translateX(-50%);
+        border-radius: 5px;
     }
-    .input-field{
-        background: #eaeaea;
-        margin: 15px 0;
-        border-radius: 3px;
+    .input-field {
         display: flex;
         align-items: center;
+        margin: 10px 0;
+        padding: 12px;
+        border-radius: 5px;
+        border: 2px solid transparent;
+        transition: 0.3s;
+        background: #eaeaea;
     }
-    input{
+    .input-field input {
         width: 100%;
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 16px;
         background: transparent;
-        border: 0;
-        outline: 0;
-        padding: 18px 15px;
+    }
+    .input-field i {
+        margin-right: 10px;
+    }
+    .btn-field {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .btn-field button {
+        flex-basis: 48%;
+        background: #3c00a0;
+        color: #fff;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 16px;
+    }
+    .btn-field button.disable {
+        background: #eaeaea;
+        color: #555;
+        cursor: not-allowed;
+    }
+    /* Validation Colors */
+    .valid-input {
+        background: #d4edda;
+        border: 2px solid #28a745;
+    }
+    .invalid-input {
+        background: #f8d7da;
+        border: 2px solid #dc3545;
     }
 </style>
 <body>
     <div class="container">
-        <img src="c:\Users\Admin\OneDrive\Desktop\mernstack\mernstack\.git\wbqwlmk8mlit5kyyjpb0oeujbpxl7cdhdsl5x2gpo2chgdpuw1ulo22kdnnhhl76-o.avif" style="background-attachment: fixed;">
         <div class="form-box">
-            <h1>Sign Up</h1>
-            <form>
-                <div class="input-group">
-                    <div class="input-field">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <input type="text" placeholder="Name:">
-                    </div>
-                    <div class="input-field">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="E-Mail:">
-                    </div>
-                    <div class="input-field">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Password:">
-                    </div>
-                    <div class="input-field">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="confirm-password" placeholder="Confirm Password:">
-                    </div>
-                    <p>Forget Password?<a href="#">Click Here</a></p>
+            <h1 id="title">Sign Up</h1>
+            <form id="form">
+                <div class="input-field" id="nameField">
+                    <i class="fa fa-user"></i>
+                    <input type="text" id="username" placeholder="Name" onkeyup="validateUsername()">
+                </div>
+                <div class="input-field" id="emailField">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" placeholder="E-Mail" onkeyup="validateEmail()">
+                </div>
+                <div class="input-field" id="passwordField">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" onkeyup="validatePassword()">
+                </div>
+                <div class="input-field" id="confirmPasswordField">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" onkeyup="validatePassword()">
+                </div>
+                <p>Forgot Password? <a href="#">Click Here</a></p>
+                <div class="btn-field">
+                    <button type="button" id="signupBtn" disabled>Sign Up</button>
+                    <button type="button" id="signInBtn">Sign In</button>
                 </div>
             </form>
         </div>
     </div>
+    <script>
+        let signupBtn = document.getElementById("signupBtn");
+        let signInBtn = document.getElementById("signInBtn");
+        let nameField = document.getElementById("nameField");
+        let emailField = document.getElementById("emailField");
+        let usernameInput = document.getElementById("username");
+        let passwordField = document.getElementById("passwordField");
+        let confirmPasswordField = document.getElementById("confirmPasswordField");
+        let passwordInput = document.getElementById("password");
+        let confirmPasswordInput = document.getElementById("confirmPassword");
+        let emailInput = document.getElementById("email");
+        let title = document.getElementById("title");
+
+        function validateUsername() {
+            let username = usernameInput.value;
+            if (username.length >= 7) {
+                nameField.classList.add("valid-input");
+                nameField.classList.remove("invalid-input");
+            } else {
+                nameField.classList.add("invalid-input");
+                nameField.classList.remove("valid-input");
+            }
+            checkFormValidity();
+        }
+
+        function validateEmail() {
+            let email = emailInput.value;
+            let validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (validEmail.test(email)) {
+                emailField.classList.add("valid-input");
+                emailField.classList.remove("invalid-input");
+            } else {
+                emailField.classList.add("invalid-input");
+                emailField.classList.remove("valid-input");
+            }
+            checkFormValidity();
+        }
+
+        function validatePassword() {
+            let password = passwordInput.value;
+            let confirmPassword = confirmPasswordInput.value;
+
+            if (password.length >= 6) {
+                passwordField.classList.add("valid-input");
+                passwordField.classList.remove("invalid-input");
+            } else {
+                passwordField.classList.add("invalid-input");
+                passwordField.classList.remove("valid-input");
+            }
+
+            if (confirmPassword.length > 0 && password === confirmPassword) {
+                confirmPasswordField.classList.add("valid-input");
+                confirmPasswordField.classList.remove("invalid-input");
+            } else {
+                confirmPasswordField.classList.add("invalid-input");
+                confirmPasswordField.classList.remove("valid-input");
+            }
+            checkFormValidity();
+        }
+
+        function checkFormValidity() {
+            let isUsernameValid = usernameInput.value.length >= 7;
+            let isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+            let isPasswordValid = passwordInput.value.length >= 6;
+            let isConfirmPasswordValid = confirmPasswordInput.value === passwordInput.value;
+
+            if (isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid) {
+                signupBtn.disabled = false;
+            } else {
+                signupBtn.disabled = true;
+            }
+        }
+
+        signInBtn.onclick = function () {
+            title.innerHTML = "Sign In";
+            nameField.style.display = "none";
+            confirmPasswordField.style.display = "none";
+            signupBtn.style.display = "none";
+            signInBtn.style.flexBasis = "100%";
+        }
+    </script>
 </body>
 </html>
