@@ -13,23 +13,41 @@
         font-family: 'Poppins', sans-serif;
         box-sizing: border-box;
     }
-    .container {
+
+    /* Full-screen blurred background */
+    body {
         width: 100%;
         height: 100vh;
         background: url('background.jpg') no-repeat center center/cover;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
+
+    /* Blur effect overlay */
+    .blur-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(10px); /* Blurs everything behind */
+        background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark overlay */
+        z-index: 1;
+    }
+
+    /* Pop-up Form */
     .form-box {
         width: 90%;
         max-width: 450px;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
         padding: 50px 60px 70px;
         text-align: center;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        z-index: 2; /* Above the blurred background */
     }
+
     /* Underlined Title */
     .form-box h1 {
         font-size: 30px;
@@ -49,6 +67,8 @@
         transform: translateX(-50%);
         border-radius: 5px;
     }
+
+    /* Input Fields */
     .input-field {
         display: flex;
         align-items: center;
@@ -56,9 +76,9 @@
         padding: 12px;
         border-radius: 5px;
         border: 2px solid transparent;
-        transition: 0.3s;
         background: #eaeaea;
     }
+
     .input-field input {
         width: 100%;
         border: none;
@@ -67,14 +87,18 @@
         font-size: 16px;
         background: transparent;
     }
+
     .input-field i {
         margin-right: 10px;
     }
+
+    /* Buttons */
     .btn-field {
         margin-top: 20px;
         display: flex;
         justify-content: space-between;
     }
+
     .btn-field button {
         flex-basis: 48%;
         background: #fb9507;
@@ -86,50 +110,60 @@
         transition: 0.3s;
         font-size: 16px;
     }
-    .btn-field button.disable {
-        background: #eaeaea;
-        color: #555;
-        cursor: not-allowed;
+
+    /* Close Button */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #333;
     }
-    /* Validation Colors */
-    .valid-input {
-        background: #d4edda;
-        border: 2px solid #28a745;
-    }
-    .invalid-input {
-        background: #f8d7da;
-        border: 2px solid #dc3545;
-    }
+    /*Image tag */
+    .image {
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    background: url('e-commerce-in-food/assets/images/image.png') no-repeat center center/cover;
+}
+
+
 </style>
 <body>
-    <div class="container">
-        <div class="form-box">
-            <h1 id="title">Sign Up</h1>
-            <form id="form">
-                <div class="input-field" id="nameField">
-                    <i class="fa fa-user"></i>
-                    <input type="text" id="username" placeholder="Name" onkeyup="validateUsername()">
-                </div>
-                <div class="input-field" id="emailField">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input type="email" id="email" placeholder="E-Mail" onkeyup="validateEmail()">
-                </div>
-                <div class="input-field" id="passwordField">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" id="password" placeholder="Password" onkeyup="validatePassword()">
-                </div>
-                <div class="input-field" id="confirmPasswordField">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" id="confirmPassword" placeholder="Confirm Password" onkeyup="validatePassword()">
-                </div>
-                <p>Forgot Password? <a href="#">Click Here</a></p>
-                <div class="btn-field">
-                    <button type="button" id="signupBtn" disabled>Sign Up</button>
-                    <button type="button" id="signInBtn">Sign In</button>
-                </div>
-            </form>
-        </div>
+
+    <!-- Blurred Background Overlay -->
+    <div class="blur-overlay"></div>
+    <div class="image"></div>
+
+    <!-- Pop-up Login Form -->
+    <div class="form-box">
+        <span class="close-btn" onclick="closeLogin()">×</span>
+        <h1 id="title">Sign Up</h1>
+        <form id="form">
+            <div class="input-field" id="nameField">
+                <i class="fa fa-user"></i>
+                <input type="text" id="username" placeholder="Name" onkeyup="validateUsername()">
+            </div>
+            <div class="input-field" id="emailField">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email" placeholder="E-Mail" onkeyup="validateEmail()">
+            </div>
+            <div class="input-field" id="passwordField">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" onkeyup="validatePassword()">
+            </div>
+            <div class="input-field" id="confirmPasswordField">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" onkeyup="validatePassword()">
+            </div>
+            <p>Forgot Password? <a href="#">Click Here</a></p>
+            <div class="btn-field">
+                <button type="button" id="signupBtn" disabled>Sign Up</button>
+                <button type="button" id="signInBtn">Sign In</button>
+            </div>
+        </form>
     </div>
+
     <script>
         let signupBtn = document.getElementById("signupBtn");
         let signInBtn = document.getElementById("signInBtn");
@@ -210,6 +244,11 @@
             signupBtn.style.display = "none";
             signInBtn.style.flexBasis = "100%";
         }
+
+        function closeLogin() {
+            window.history.back(); // Navigate back to index.html
+        }
     </script>
+
 </body>
 </html>
