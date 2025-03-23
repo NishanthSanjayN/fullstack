@@ -30,6 +30,21 @@ body {
     text-rendering: optimizeLegibility !important;
     background: #eee;
 }
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: 5rem;
+    border: 2rem solid var(--black);
+    color: var(--black);
+    cursor: pointer;
+    background: none;
+}
+.btn:hover{
+    background: var(--orange);
+    color: #fff;
+}
 .header{
     position:fixed;
     top:0;left: 0;right: 0;
@@ -58,6 +73,11 @@ body {
 .header .navbar a:hover{
     color: var(--orange);
 }
+.header .navbar.active{
+    right: 2rem;
+    transition: .4s linear;
+}
+
 .header .icons div{
     height:4.5rem;
     width:5rem;
@@ -67,7 +87,7 @@ body {
     color:var(--black);
     font-size:2rem;
     cursor: pointer;
-    margin-right: 3rem;
+    margin-right: .3rem;
     text-align:center;
 
 }
@@ -75,7 +95,7 @@ body {
     background: var(--orange);
     color:#fff;
 }
-menu-btn{
+#menu-btn{
     display: none;
 
 }
@@ -83,14 +103,15 @@ menu-btn{
     position:absolute;
     top: 110%;right: -110%;
     width:50rem;
-    height: 4rem;
+    height: 5rem;
     background:#fff;
     overflow:hidden;
     border-radius:.5rem;
     display: flex;
     align-items: center;
-    box-shadow: var(--b0x--shadow);
+    box-shadow: var(--box--shadow);
 }
+
 .header .search-form.active{
     right:2rem;
     transform: .4s linear;
@@ -113,4 +134,35 @@ menu-btn{
 }
 .header .search-form label:hover{
     color: var(--orange);
+}
+@media (max-width:991px)
+{
+    html{
+        font-size:55%;
+    }
+    .header{
+        padding: 2rem;
+    }
+}
+@media (max-width:768px){
+    .header .navbar{
+        position: absolute;
+        top: 110%;right:-110%;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background:#fff;
+    }
+    .header .navbar a{
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+
+    }
+}
+@media (max-width:450px)
+{
+    html{
+        font-size:50%;
+    }
 }
