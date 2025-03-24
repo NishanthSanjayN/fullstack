@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="st.css">
+     <!-- fancy box  -->
+     <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+     <!-- custom css  -->
+     <link rel="stylesheet" href="style.css">
+    <!-- Unicons (Icons) -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Swiper Slider -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- Fancy Box -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .faq-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.faq-box {
+    flex: 1 1 calc(33.33% - 20px); /* Adjust width for responsiveness */
+    min-height: 200px; /* Ensures equal height for all boxes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+header {
+    margin-bottom: 60px; 
+}
+.faq-sec {
+    padding-top: 90px; 
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+.faq-box.active .faq-answer {
+    display: block;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <i class="fas fa-shopping-basket">Foodie</i>
+        </a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms&Conditions</a>
+            <a href="#Refund">Refund</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="questions.html">Questions</a>
+        </nav>
+        
+    </header>
+
+<section class="faq-sec section-repeat-img">
+    <div class="sec-wp">
+        <div class="bg-pattern bg-light repeat-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="sec-title text-center mb-5">
+                        <p class="sec-sub-title mb-3">🍔 FAQs</p>
+                        <h2 class="h2-title">Frequently <span>Asked Questions</span></h2>
+                        <div class="sec-title-shape mb-4">
+                            <img src="assets/images/title-shape.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-row">
+                <div class="faq-box">
+                    <div class="faq-question">
+                        <h4 class="h4-title">🕒 What are the login hours?</h4>
+                        <i class="faq-icon uil uil-angle-down"></i>
+                    </div>
+                    <p class="faq-answer">Our online ordering service is accessible daily, allowing you to place orders conveniently from 9:00 AM to 11:00 PM. Whether you're craving breakfast, lunch, dinner, or a late-night snack, you can order anytime within this time frame. We ensure a seamless ordering experience, so you can enjoy your favorite meals at your preferred time.</p>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">
+                        <h4 class="h4-title">💳 How do I get my refund?</h4>
+                        <i class="faq-icon uil uil-angle-down"></i>
+                    </div>
+                    <p class="faq-answer">If you request a refund, it will be processed within 5-7 business days and credited back to your original payment method. The exact time may vary depending on your bank or payment provider's processing speed. We strive to ensure a smooth refund process, keeping you updated throughout.</p>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">
+                        <h4 class="h4-title">🚀 How long does food delivery take?</h4>
+                        <i class="faq-icon uil uil-angle-down"></i>
+                    </div>
+                    <p class="faq-answer">Delivery usually takes between **30-45 minutes**, depending on your location and order size.</p>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">
+                        <h4 class="h4-title">🥗 Do you offer both vegetarian and non-vegetarian food?</h4>
+                        <i class="faq-icon uil uil-angle-down"></i>
+                    </div>
+                    <p class="faq-answer">Yes! Our menu features a diverse selection of vegetarian and non-vegetarian options to suit all preferences. From delicious plant-based dishes to flavorful meat and seafood choices, we have something for everyone. Whether you're a vegetarian, a meat lover, or enjoy both, you'll find plenty of tasty options to satisfy your cravings.</p>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">
+                        <h4 class="h4-title">🚚 What is the cost of food delivery?</h4>
+                        <i class="faq-icon uil uil-angle-down"></i>
+                    </div>
+                    <p class="faq-answer">Our delivery charges start at $2, ensuring an affordable and convenient service for all orders. However, if your total order value exceeds $30, you’ll enjoy free delivery, making it even more cost-effective. We strive to provide a seamless and budget-friendly food delivery experience for our customers.</p>
+                </div>
+
+                <div class="faq-box">
+                    <div class="faq-question">
+                        <h4 class="h4-title">🔑 Who is eligible for Pro Membership?</h4>
+                        <i class="faq-icon uil uil-angle-down"></i>
+                    </div>
+                    <p class="faq-answer">Users who place 10 or more orders per month become eligible for our Pro Membership, unlocking special benefits. This includes exclusive discounts on meals and free deliveries, helping you save more on your favorite orders. Enjoy premium perks while indulging in delicious food with every purchase!
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+document.querySelectorAll(".faq-question").forEach(item => {
+    item.addEventListener("click", function() {
+        // Close all other FAQ answers
+        document.querySelectorAll(".faq-box").forEach(box => {
+            if (box !== this.parentNode && box.classList.contains("active")) {
+                box.classList.remove("active");
+                box.querySelector(".faq-answer").style.display = "none";
+            }
+        });
+
+        // Toggle the clicked FAQ box
+        const parent = this.parentNode;
+        const answer = parent.querySelector(".faq-answer");
+
+        if (parent.classList.contains("active")) {
+            parent.classList.remove("active");
+            answer.style.display = "none";
+        } else {
+            parent.classList.add("active");
+            answer.style.display = "block";
+        }
+    });
+});
+
+
+</script>
+
+</body>
+</html>
