@@ -30,17 +30,39 @@ body {
     text-rendering: optimizeLegibility !important;
     background: #eee;
 }
-.btn{
-    margin-top: 1rem;
-    display: inline-block;
-    padding: 8rem 3rem;
-    font-size: 1.7rem;
-    border-radius: 5rem;
-    border: 2rem solid var(--black);
-    color: var(--black);
-    cursor: pointer;
-    background: none;
+section{
+    padding: 2rem;
 }
+.button {
+    display: inline-block;
+    padding: 0.8rem 2rem; /* Balanced size */
+    font-size: 1rem; /* Readable text */
+    font-weight: 600;
+    border-radius: 0.5rem; /* Slightly rounded corners */
+    border: 2px solid #000; /* Black border */
+    color: white; /* White text */
+    background: black; /* Black background */
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.button:hover {
+    background: #f8b400; /* Orange on hover */
+    border-color: #f8b400;
+    color: black;
+}
+
+/* Click effect */
+.button:active {
+    background: #f8b400; /* Turns orange on click */
+    color: black;
+    transform: scale(0.98); /* Slight press-down effect */
+}
+
+
+
 .btn:hover{
     background: var(--orange);
     color: #fff;
@@ -1987,6 +2009,9 @@ p {
 }
 
 @media (max-width: 400px) {
+    section{
+        padding: 2rem;
+    }
     .container, .container-fluid {
         padding: 0 15px;
     }
@@ -2105,4 +2130,33 @@ p {
         font-size: 14px;
     }
 }
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url("assets/images/DSC07980.jpg"); /* Ensure correct path */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    color: white; /* Ensure text is visible on dark images */
+}
+
+/* Style for content inside home section */
+.home .content {
+    max-width: 600px;
+}
+
+.home h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.home p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
 

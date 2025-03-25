@@ -1,0 +1,13 @@
+section{
+    padding: 2rem 9%;
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../image.png) no-repeat;
+    background-position: center;
+    background-size:cover;
+    padding-top: 17rem;
+    padding-bottom:10rem;
+}
