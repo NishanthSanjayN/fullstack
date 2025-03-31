@@ -7,66 +7,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Website</title>
     <link rel="icon" type="image/png" href="pizza.png">
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- for icons  -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- bootstrap  -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- for swiper slider  -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
+    <link rel="icon" type="image/x-icon" href="e-commerce -in-food/assets/images/sushi.png">
     <!-- fancy box  -->
     <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
     <!-- custom css  -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="st.css">
+    <link rel="icon" type="image/x-icon" href="https://files.oaiusercontent.com/file-4bf9rMbLmRD4v2GS6jQ1Mo?se=2025-03-26T04%3A40%3A27Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D70d3bb76-3aa2-4d9f-8022-61daa664b04e.webp&sig=pUwmWjfZE5zSWAmq84IWfnv9kBadZVrO2%2BpcTQzy%2B3A%3D">
+    <style>
+       .marquee-wrapper {
+            overflow: hidden;
+            position: relative;
+            height: 4rem; 
+            display: flex;
+            align-items: center;
+            background-color: #ff8243 !important;
+            padding: 1rem 0; 
+            z-index: 50;
+        }
+        
+        .marquee-content {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee-content span {
+            font-size: 2rem;
+            font-weight: bold;
+            padding-right: 2rem;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        
+        .header {
+            position: fixed;
+            top: 4rem; 
+            width: 100vw; 
+            height: 6.4rem; 
+            background: white;
+            padding: 1rem;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 49;
+            display: flex;
+            align-items: center;
+        }
+
+
+    </style>
 </head>
 
 <body class="body-fixed">
-    <!-- start of header  -->
-    <header class="site-header">
-        <div class="container">
-            <div class="row">
-                <header class="header">
-                    <a href="#" class="logo">
-                        <i class="fas fa-shopping-basket">Foodie</i>
-                    </a>
-            
-                <div class="col-lg-10">
-                    <div class="main-navigation">
-                        <button class="menu-toggle"><span></span><span></span></button>
-                        <nav class="header-menu">
-                            <ul class="menu food-nav-menu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="aboutus.html">About</a></li>
-                                <li><a href="terms.html">Terms and conditions</a></li>
-                                <li><a href="questions.html">FAQ</a></li>
-                                <li><a href="reviews.html">Reviews</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <div class="header-right">
-                            <form action="#" class="header-search-form for-des">
-                                <input type="search" class="form-input" placeholder="Search Here...">
-                                <button type="submit">
-                                    <i class="uil uil-search"></i>
-                                </button>
-                            </form>
-                            <a href="javascript:void(0)" class="header-btn header-cart">
-                                <i class="uil uil-shopping-bag"></i>
-                                <span class="cart-number">3</span>
-                            </a>
-                            <a href="login.html" class="header-btn">
-                                <i class="uil uil-user-md"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+   <header class="bg-gradient-to-br from-orange-600 to-orange-400 h-10 w-full fixed top-0 z-50">
+        <div class="marquee-wrapper flex items-center text-white font-medium text-sm py-2">
+            <div class="marquee-content">
+                <span class="mx-6">🔥 Get Extra 10% Off* on Your 1st Order 🤯</span>
+                <span class="mx-6">🚚 FREE* SHIPPING above ₹495 for all orders - BUY NOW</span>
+                <span class="mx-6">❤️ Enjoy Same Day Delivery* across Thoraipakkam!</span>
+                <span class="mx-6">50 % Off* on Your 1st Order 🤯</span>
             </div>
         </div>
     </header>
-    <!-- header ends  -->
-
+    <div>
+    <section class="header">
+        <a href="#" class="logo">
+            <i class="fas fa-shopping-basket">Foodie</i>
+        </a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms&Conditions</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="questions.html">Questions</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-user" id="login-btn"></div>
+        </div>
+    
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+        
+    </section>
     <div id="viewport">
         <div id="js-scroll-content">
             <section class="main-banner" id="home">
@@ -85,7 +127,7 @@
                                 <div class="banner-text">
                                     <h1 class="h1-title">
                                         Welcome to 
-                                        <span>Zomato</span>
+                                        <span>Foodie</span>
                                         
                                     </h1>
                                     <p>An E-commerce Food Website is an online platform that allows users to browse, order, and purchase food products, including groceries, restaurant meals, or specialty items, for delivery or pickup. These websites provide a seamless digital shopping experience, enabling customers to explore a variety of food options from different vendors or brands..</p>
@@ -471,46 +513,6 @@
                     </div>
                 </div>
             </section>
-
-            <section class="two-col-sec section">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-5">
-                            <div class="sec-img mt-5">
-                                <img src="assets/images/pizza.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="sec-text">
-                                <h2 class="xxl-title">Chicken Pepperoni</h2>
-                                <p>Chicken pepperoni is a spicy and flavorful alternative to traditional pepperoni, made from seasoned and cured chicken instead of pork or beef. It is typically seasoned with paprika, black pepper, garlic, and chili powder, giving it a smoky and slightly spicy taste. Compared to traditional pepperoni, chicken pepperoni is a leaner option with lower fat content, making it a healthier choice for those looking to reduce red meat consumption. It is commonly used as a topping on pizzas, in sandwiches, wraps, pasta, and salads, or even enjoyed as a protein-rich snack. With its bold umami flavor and satisfying texture, chicken pepperoni offers a delicious twist on classic pepperoni while catering to poultry lovers..</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="two-col-sec section pt-0">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 order-lg-1 order-2">
-                            <div class="sec-text">
-                                <h2 class="xxl-title">Cheesy Pizza</h2>
-                                <p>This is Cheesy pizza is a delicious and indulgent dish loved for its gooey, melted cheese that enhances its rich flavor and texture. The pizza base, made from soft or crispy dough, is topped with a generous layer of cheese, often including mozzarella for its signature stretchiness, along with cheddar, parmesan, provolone, or other blends for added depth of flavor. The cheese melts into a creamy, golden layer, complementing the tangy tomato sauce and any additional toppings like vegetables, meats, or herbs. Whether enjoyed as a classic margherita or loaded with extra cheese varieties, cheesy pizza delivers a comforting and satisfying experience with every bite..</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 order-lg-2 order-1">
-                            <div class="sec-img">
-                                <img src="c:\Users\Admin\OneDrive\Desktop\github projects\R.jpeg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-           
-
             <section class="our-team section">
                 <div class="sec-wp">
                     <div class="container">

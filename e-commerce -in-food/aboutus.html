@@ -20,57 +20,140 @@
     <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://files.oaiusercontent.com/file-4bf9rMbLmRD4v2GS6jQ1Mo?se=2025-03-26T04%3A40%3A27Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D70d3bb76-3aa2-4d9f-8022-61daa664b04e.webp&sig=pUwmWjfZE5zSWAmq84IWfnv9kBadZVrO2%2BpcTQzy%2B3A%3D">
     <style>
-        header {
-    margin-bottom: 60px; 
+    /* Global Reset */
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.ecoimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ecoimg img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+
+.about-7 {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 20px 70px 0;
+    text-align: center; 
+}
+
+@media (max-width: 1024px) {
+    .about-7 {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
     }
-       .faq-sec {
-    padding-top: 90px; 
-    }
+}
+.ecoimg img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid #09d509;
+}
+p {
+    color: #09d509;  /* Green color */
+    font-size: 18px; /* Increased font size */
+    font-weight: bold; /* Make text bold */
+    text-align: center; /* Center text */
+    margin-top: 10px; /* Add some spacing */
+}
+
+/* Centering Images & Making Them Round */
+.ecoimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ecoimg img {
+    width: 100px;  /* Adjusted size for better proportion */
+    height: 100px;
+    border-radius: 50%; /* Makes image round */
+    object-fit: cover; /* Ensures proper fit */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect: Scale, Glow, and Border */
+.ecoimg img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 255, 0, 0.6); 
+    border: 3px solid #09d509; 
+}
+/* Style for Paragraph */
+p {
+    color: #09d509;  /* Green color */
+    font-size: 22px; /* Increased font size */
+    font-weight: bold; /* Make text bold */
+    text-align: center; 
+    margin-top: 15px; 
+}
+
+
+.ecoimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ecoimg img {
+    width: 150px;  
+    height: 150px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.ecoimg img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 20px rgba(0, 255, 0, 0.6); 
+    border: 4px solid #00ff00; 
+}
+
+
+
 
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <div class="row">
-                <header class="header">
-                    <a href="#" class="logo">
-                        <i class="fas fa-shopping-basket">Foodie</i>
-                    </a>
-            
-                <div class="col-lg-10">
-                    <div class="main-navigation">
-                        <button class="menu-toggle"><span></span><span></span></button>
-                        <nav class="header-menu">
-                            <ul class="menu food-nav-menu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="aboutus.html">About</a></li>
-                                <li><a href="terms.html">Terms and conditions</a></li>
-                                <li><a href="questions.html">FAQ</a></li>
-                                <li><a href="reviews.html">Reviews</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <div class="header-right">
-                            <form action="#" class="header-search-form for-des">
-                                <input type="search" class="form-input" placeholder="Search Here...">
-                                <button type="submit">
-                                    <i class="uil uil-search"></i>
-                                </button>
-                            </form>
-                            <a href="javascript:void(0)" class="header-btn header-cart">
-                                <i class="uil uil-shopping-bag"></i>
-                                <span class="cart-number">3</span>
-                            </a>
-                            <a href="login.html" class="header-btn">
-                                <i class="uil uil-user-md"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <header class="header">
+        <a href="#" class="logo">
+            <i class="fas fa-shopping-basket">Foodie</i>
+        </a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms&Conditions</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="questions.html">Questions</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-user" id="login-btn"></div>
         </div>
+    
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+        
     </header>
     <section class="about-sec section" id="about">
         <div class="container">
@@ -103,6 +186,29 @@
             </div>
         </div>
     </section>
+    <div class="about-7">
+        <div class="eco2">
+            <div class="ecoimg">
+                <img src="assets/images/blog/blog4.jpg" alt="ecoimg1">
+            </div>
+            <p><span>Our Super Quick Turnaround</span><br>Quality is retained throughout the process</p>
+        </div>
+    
+        <div class="eco3">
+            <div class="ecoimg">
+                <img src="assets/images/blog/blog4.webp" alt="ecoimg2">
+            </div>
+            <p><span>No Pesticides</span><br>Use completely organic</p>
+        </div>
+    
+        <div class="eco4">
+            <div class="ecoimg">
+                <img src="C:\Users\Admin\OneDrive\Desktop\MERN\fullstack\e-commerce -in-food\assets\images\blog\blog8.jpg" alt="ecoimg3">
+            </div>
+            <p><span>Fastest &amp; Free Shipping</span><br>The best quality when reaching the consumer</p>
+        </div>
+    </div>
+    
 
 </body>
 </html>

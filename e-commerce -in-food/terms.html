@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- for swiper slider  -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
     <!-- fancy box  -->
     <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
@@ -19,48 +20,33 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="st.css">
+    <link rel="icon" type="image/x-icon" href="https://files.oaiusercontent.com/file-4bf9rMbLmRD4v2GS6jQ1Mo?se=2025-03-26T04%3A40%3A27Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D70d3bb76-3aa2-4d9f-8022-61daa664b04e.webp&sig=pUwmWjfZE5zSWAmq84IWfnv9kBadZVrO2%2BpcTQzy%2B3A%3D">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <div class="row">
-                <header class="header">
-                    <a href="#" class="logo">
-                        <i class="fas fa-shopping-basket">Foodie</i>
-                    </a>
-            
-                <div class="col-lg-10">
-                    <div class="main-navigation">
-                        <button class="menu-toggle"><span></span><span></span></button>
-                        <nav class="header-menu">
-                            <ul class="menu food-nav-menu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="aboutus.html">About</a></li>
-                                <li><a href="terms.html">Terms and conditions</a></li>
-                                <li><a href="questions.html">FAQ</a></li>
-                                <li><a href="reviews.html">Reviews</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <div class="header-right">
-                            <form action="#" class="header-search-form for-des">
-                                <input type="search" class="form-input" placeholder="Search Here...">
-                                <button type="submit">
-                                    <i class="uil uil-search"></i>
-                                </button>
-                            </form>
-                            <a href="javascript:void(0)" class="header-btn header-cart">
-                                <i class="uil uil-shopping-bag"></i>
-                                <span class="cart-number">3</span>
-                            </a>
-                            <a href="login.html" class="header-btn">
-                                <i class="uil uil-user-md"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <i class="fas fa-shopping-basket">Foodie</i>
+        </a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms&Conditions</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="questions.html">Questions</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-user" id="login-btn"></div>
         </div>
+    
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+        
     </header>
     <footer class="site-footer" id="contact">
         <div class="top-footer section">
