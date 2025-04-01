@@ -23,51 +23,53 @@
     <link rel="stylesheet" href="st.css">
     <link rel="icon" type="image/x-icon" href="https://files.oaiusercontent.com/file-4bf9rMbLmRD4v2GS6jQ1Mo?se=2025-03-26T04%3A40%3A27Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D70d3bb76-3aa2-4d9f-8022-61daa664b04e.webp&sig=pUwmWjfZE5zSWAmq84IWfnv9kBadZVrO2%2BpcTQzy%2B3A%3D">
     <style>
-       .marquee-wrapper {
-            overflow: hidden;
-            position: relative;
-            height: 4rem; 
-            display: flex;
-            align-items: center;
-            background-color: #ff8243 !important;
-            padding: 1rem 0; 
-            z-index: 50;
-        }
-        
-        .marquee-content {
-            display: flex;
-            white-space: nowrap;
-            animation: marquee 20s linear infinite;
-        }
+        .marquee-wrapper {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 4rem; 
+        display: flex;
+        align-items: center;
+        background-color: #ff8243 !important;
+        padding: 1rem 0; 
+        z-index: 50;
+    }
 
-        .marquee-content span {
-            font-size: 2rem;
-            font-weight: bold;
-            padding-right: 2rem;
-        }
+    .marquee-content {
+        display: flex;
+        white-space: nowrap;
+        animation: marquee 20s linear infinite;
+    }
 
-        @keyframes marquee {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(-100%);
-            }
-        }
-        
-        .header {
-            position: fixed;
-            top: 4rem; 
-            width: 100vw; 
-            height: 6.4rem; 
-            background: white;
-            padding: 1rem;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 49;
-            display: flex;
-            align-items: center;
-        }
+    .marquee-content span {
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-right: 2rem;
+        color: white;
+    }
 
+    @keyframes marquee {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .header {
+        position: fixed;
+        top: 4rem; /* Push the header below the marquee */
+        width: 100vw; 
+        height: 6.4rem; 
+        background: white;
+        padding: 1rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 49;
+        display: flex;
+        align-items: center;
+    }
 
     </style>
 </head>
