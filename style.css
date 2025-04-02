@@ -2138,16 +2138,16 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url("assets/images/DSC07980.jpg"); /* Ensure correct path */
+    background: url("assets/images/DSC07980.jpg"); 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
-    color: white; /* Ensure text is visible on dark images */
+    color: white; 
 }
 
-/* Style for content inside home section */
+
 .home .content {
     max-width: 600px;
 }
