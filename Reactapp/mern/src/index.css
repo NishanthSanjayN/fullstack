@@ -1,13 +1,60 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom styles */
+.marquee-wrapper {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 4rem; 
+  display: flex;
+  align-items: center;
+  background-color: #ff8243 !important;
+  padding: 1rem 0; 
+  z-index: 50;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
 }
+
+.marquee-content span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-right: 2rem;
+  color: white;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.header {
+  position: fixed;
+  top: 4rem;
+  width: 100vw; 
+  height: 6.4rem; 
+  background: white;
+  padding: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 49;
+  display: flex;
+  align-items: center;
+}
+
+.back-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Add other custom styles from your original CSS */

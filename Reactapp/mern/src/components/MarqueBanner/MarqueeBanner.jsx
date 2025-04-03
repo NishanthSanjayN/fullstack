@@ -1,10 +1,7 @@
-import React from 'react';
-import './MarqueeBanner.css';
-
-const MarqueeBanner = () => {
+const Marquee = () => {
   return (
-    <header className="marquee-header">
-      <div className="marquee-wrapper">
+    <header className="bg-gradient-to-br from-orange-600 to-orange-400 h-10 w-full fixed top-0 z-50">
+      <div className="marquee-wrapper flex items-center text-white font-medium text-sm py-2">
         <div className="marquee-content">
           <span className="mx-6">🔥 Get Extra 10% Off* on Your 1st Order 🤯</span>
           <span className="mx-6">🚚 FREE* SHIPPING above ₹495 for all orders - BUY NOW</span>
@@ -16,4 +13,4 @@ const MarqueeBanner = () => {
   );
 };
 
-export default MarqueeBanner;
+export default Marquee;
